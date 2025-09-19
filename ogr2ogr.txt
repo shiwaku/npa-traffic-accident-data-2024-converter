@@ -1,0 +1,40 @@
+# CSVからGeoParquetの作成
+ogr2ogr -f "Parquet" honhyo_2019-2024_convert.parquet honhyo_2019-2024_convert.csv -oo X_POSSIBLE_NAMES=地点_経度（東経）_10進数 -oo Y_POSSIBLE_NAMES=地点_緯度（北緯）_10進数 -s_srs EPSG:4326 -t_srs EPSG:4326
+
+# CSVからGeoJSONの作成
+ogr2ogr -f "GeoJSON" honhyo_2019-2024_convert.geojson honhyo_2019-2024_convert.csv -oo X_POSSIBLE_NAMES=地点_経度（東経）_10進数 -oo Y_POSSIBLE_NAMES=地点_緯度（北緯）_10進数 -s_srs EPSG:4326 -t_srs EPSG:4326
+
+# CSVからGeArrowの作成
+ogr2ogr -f "Arrow" honhyo_2019-2024_convert.arrow honhyo_2019-2024_convert.csv -oo X_POSSIBLE_NAMES=地点_経度（東経）_10進数 -oo Y_POSSIBLE_NAMES=地点_緯度（北緯）_10進数 -s_srs EPSG:4326 -t_srs EPSG:4326
+
+# CSVからFlatGeobufの作成
+ogr2ogr -f "FlatGeobuf" honhyo_2019-2024_convert.fgb honhyo_2019-2024_convert.csv -oo X_POSSIBLE_NAMES=地点_経度（東経）_10進数 -oo Y_POSSIBLE_NAMES=地点_緯度（北緯）_10進数 -s_srs EPSG:4326 -t_srs EPSG:4326
+
+# GeoJSONからFlatGeobufの作成
+ogr2ogr -f "FlatGeobuf" honhyo_2019-2024_convert.fgb honhyo_2019-2023_convert.geojson
+
+# PMTilesの作成
+tippecanoe -o honhyo_2019-2024_convert.pmtiles honhyo_2019-2024_convert.geojson -pf -pk -P
+
+# CSVからGeArrow（無圧縮）の作成
+ogr2ogr -f "Arrow" honhyo_2019-2024_convert_.arrow honhyo_2019-2024_convert.csv ^
+  -oo X_POSSIBLE_NAMES="地点_経度（東経）_10進数" ^
+  -oo Y_POSSIBLE_NAMES="地点_緯度（北緯）_10進数" ^
+  -oo AUTODETECT_TYPE=YES ^
+  -oo KEEP_GEOM_COLUMNS=NO ^
+  -a_srs EPSG:4326 ^
+  -lco GEOMETRY_ENCODING=GEOARROW ^
+  -lco COMPRESSION=NONE ^
+  -lco FORMAT=FILE
+
+# CSVからGeArrow（無圧縮）の作成
+ogr2ogr -f "Arrow" honhyo_2024_convert.arrow honhyo_2024_convert.csv ^
+  -oo X_POSSIBLE_NAMES="地点_経度（東経）_10進数" ^
+  -oo Y_POSSIBLE_NAMES="地点_緯度（北緯）_10進数" ^
+  -oo AUTODETECT_TYPE=YES ^
+  -oo KEEP_GEOM_COLUMNS=NO ^
+  -a_srs EPSG:4326 ^
+  -lco GEOMETRY_ENCODING=GEOARROW ^
+  -lco COMPRESSION=NONE ^
+  -lco FORMAT=FILE
+ 
