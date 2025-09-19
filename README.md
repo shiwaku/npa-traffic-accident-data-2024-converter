@@ -11,7 +11,7 @@
 - [https://xs489works.xsrv.jp/pmtiles-data/traffic-accident/data/honhyo_2024.csv](https://xs489works.xsrv.jp/pmtiles-data/traffic-accident/data/honhyo_2024.csv),59.3MB
 
 #### 出力結果
-- [https://xs489works.xsrv.jp/pmtiles-data/traffic-accident/honhyo_2023_to-degree.csv](https://xs489works.xsrv.jp/pmtiles-data/traffic-accident/honhyo_2024_to-degree.csv),69.7MB  
+- [https://xs489works.xsrv.jp/pmtiles-data/traffic-accident/honhyo_2024_to-degree.csv](https://xs489works.xsrv.jp/pmtiles-data/traffic-accident/honhyo_2024_to-degree.csv),69.7MB  
 
 ### csvfile-convert.py
 - 十進法度単位に変換した本票CSVファイル（2024年）をコード表をもとに読みやすいデータに変換するプログラムになります。
