@@ -37,4 +37,20 @@ ogr2ogr -f "Arrow" honhyo_2024_convert.arrow honhyo_2024_convert.csv ^
   -lco GEOMETRY_ENCODING=GEOARROW ^
   -lco COMPRESSION=NONE ^
   -lco FORMAT=FILE
- 
+
+# PMTilesの作成
+## ズーム0–11用（間引きあり）
+tippecanoe -o honhyo_low.pmtiles \
+  honhyo_2019-2024_convert.geojson \
+  -pf -pk -P -zg --maximum-zoom=11
+
+## ズーム12–14用（間引きなし）
+tippecanoe -o honhyo_high.pmtiles \
+  honhyo_2019-2024_convert.geojson \
+  -pf -pk -P -zg --minimum-zoom=12 -r1
+
+## tile-join で結合
+tile-join -o honhyo_2019-2024_convert.pmtiles \
+  honhyo_low.pmtiles honhyo_high.pmtiles \
+  --no-tile-size-limit
+
