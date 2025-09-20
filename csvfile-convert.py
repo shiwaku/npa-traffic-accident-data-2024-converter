@@ -470,6 +470,8 @@ with open(output_csvfile, 'a', encoding='UTF-8') as f:
             return '路面電車'
         elif code == '42':
             return '列車'
+        elif code == '43':
+            return '特定小型原付自転車'
         elif code == '51':
             return '軽車両－自転車'
         elif code == '52':
