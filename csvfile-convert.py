@@ -41,7 +41,8 @@ with open(output_csvfile, 'a', encoding='UTF-8') as f:
     # 03_警察署等コードを辞書に読み込み
     # csv_file_keisatusyo = "code/3_koudohyou_keisatusyotoukoudo.csv"
     # csv_file_keisatusyo = "code/3_koudohyou_keisatusyotoukoudo_2022.csv"
-    csv_file_keisatusyo = "code/3_koudohyou_keisatusyotoukoudo_2023.csv"
+    # csv_file_keisatusyo = "code/3_koudohyou_keisatusyotoukoudo_2023.csv"
+    csv_file_keisatusyo = "code/3_koudohyou_keisatusyotoukoudo_2024.csv"
     with open(csv_file_keisatusyo, mode="r", encoding="utf-8") as file:
         reader = csv.reader(file)
         # 5行のヘッダーをスキップ
@@ -465,7 +466,7 @@ with open(output_csvfile, 'a', encoding='UTF-8') as f:
         elif code == '35':
             return '二輪車－自動二輪－原付二種－51～125cc'
         elif code == '36':
-            return '二輪車－原付自転車'
+            return '二輪車－一般原付自転車'
         elif code == '41':
             return '路面電車'
         elif code == '42':

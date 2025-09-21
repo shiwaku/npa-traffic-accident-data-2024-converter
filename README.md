@@ -48,6 +48,13 @@ hit.csv is based on https://github.com/code4fukui/traffic-accident Thanks!
 ※[felt/tippecanoe](https://github.com/felt/tippecanoe)でPMTiles形式に変換しています
 - [https://xs489works.xsrv.jp/pmtiles-data/traffic-accident/honhyo_2019-2024_convert.pmtiles](https://xs489works.xsrv.jp/pmtiles-data/traffic-accident/honhyo_2019-2024_convert.pmtiles),313MB
 
+#### 更新履歴
+- 2025/09/20 20:00
+  - コード表の「当事者種別」に「特定小型原付自転車」を追加し、本票データの読み替え時に反映
+- 2025/09/21 11:00
+  - コード表の「当事者種別」を「原付自転車」から「一般原付自転車」に変更し、本票データの読み替え時に反映
+  - コード表の「警察署等」に「80,053,徳島,交通指導課（高速隊）」を追加し、本票データの読み替え時に反映
+
 ## デモサイト（MapLibre GL JS）
 - https://shiwaku.github.io/npa-traffic-accident-map-on-maplibre/
 - 使用データ：交通事故統計情報のオープンデータ（2019年、2020年、2021年、2022年、2023年、2024年）の本票（PMTiles形式）
