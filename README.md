@@ -3,7 +3,7 @@
 ## プログラムについて
 
 - 本プログラムは、警察庁が公開している、[交通事故統計情報のオープンデータ](https://www.npa.go.jp/publications/statistics/koutsuu/opendata/index_opendata.html)の[2024 年の本票](https://www.npa.go.jp/publications/statistics/koutsuu/opendata/2024/opendata_2024.html)を[コード表](https://www.npa.go.jp/publications/statistics/koutsuu/opendata/2024/opendata_2024.html)をもとに読みやすい形式（GIS データ）に変換するプログラムになります。
-- Python で構築
+- python で構築
 
 ## csvfile-to-degree.py
 
