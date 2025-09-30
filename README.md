@@ -79,7 +79,7 @@ hit.csv is based on https://github.com/code4fukui/traffic-accident Thanks!
 
 - https://shiwaku.github.io/npa-traffic-accident-map-on-maplibre/
 - 使用データ：交通事故統計情報のオープンデータ（2019 年、2020 年、2021 年、2022 年、2023 年、2024 年）の本票（PMTiles 形式）
-  <img width="1912" height="897" alt="image" src="https://github.com/user-attachments/assets/c70bc274-31e8-401a-86a7-53ef2c63ffaa" />
+  ![alt text](image-2.png)
 
 ## 使用データ及び出力結果のライセンスについて
 
@@ -90,3 +90,9 @@ hit.csv is based on https://github.com/code4fukui/traffic-accident Thanks!
 ## 免責事項
 
 利用者が当該データを用いて行う一切の行為について何ら責任を負うものではありません。
+
+## 本データセットの活用事例
+
+- 秋田魁新報社 | 秋田の交通事故マップ
+  https://www.sakigake.jp/special/maps/traffic-accident/
+  ![alt text](image-1.png)
