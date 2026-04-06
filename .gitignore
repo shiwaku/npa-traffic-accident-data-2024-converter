@@ -1,0 +1,13 @@
+# 入力データ
+data/
+csv/
+
+# 出力ファイル
+honhyo_*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
