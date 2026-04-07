@@ -140,7 +140,7 @@ tippecanoe -o honhyo_2019-2024_convert.pmtiles honhyo_2019-2024_convert.geojson 
 
 ## デモサイト
 
-MapLibre GL JS を使った可視化デモ：[https://shiwaku.github.io/npa-traffic-accident-map-on-maplibre/](https://shiwaku.github.io/npa-traffic-accident-map-on-maplibre/)
+MapLibre GL JS を使った可視化デモ：[https://shiwaku.github.io/npa-traffic-accident-map/](https://shiwaku.github.io/npa-traffic-accident-map/)
 
 使用データ：交通事故統計情報のオープンデータ（2019〜2024 年）の本票（PMTiles 形式）
 
