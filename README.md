@@ -115,12 +115,26 @@ python scripts/csvfile-merge.py
 
 | 形式 | ファイル | サイズ | ダウンロード |
 |------|---------|--------|-------------|
-| CSV | `honhyo_2019-2024_convert.csv` | 1.2 GB | [ダウンロード](https://xs489works.xsrv.jp/pmtiles-data/traffic-accident/honhyo_2019-2024_convert.csv) |
-| GeoParquet | `honhyo_2019-2024_convert.parquet` | 154 MB | [ダウンロード](https://xs489works.xsrv.jp/pmtiles-data/traffic-accident/honhyo_2019-2024_convert.parquet) |
-| PMTiles | `honhyo_2019-2024_convert.pmtiles` | 313 MB | [ダウンロード](https://xs489works.xsrv.jp/pmtiles-data/traffic-accident/honhyo_2019-2024_convert.pmtiles) |
+| CSV | `honhyo_2019-2024_convert.csv` | 1.4 GB | [ダウンロード](https://xs489works.xsrv.jp/pmtiles-data/traffic-accident/honhyo_2019-2024_convert.csv) |
+| GeoParquet | `honhyo_2019-2024_convert.parquet` | 179 MB | [ダウンロード](https://xs489works.xsrv.jp/pmtiles-data/traffic-accident/honhyo_2019-2024_convert.parquet) |
+| PMTiles | `honhyo_2019-2024_convert.pmtiles` | 615  MB | [ダウンロード](https://xs489works.xsrv.jp/pmtiles-data/traffic-accident/honhyo_2019-2024_convert.pmtiles) |
 
-> GeoParquet への変換は [GDAL/OGR (OSGeo4W)](https://trac.osgeo.org/osgeo4w/) を使用。コマンドは `ogr2ogr.txt` を参照してください。
-> PMTiles への変換は [felt/tippecanoe](https://github.com/felt/tippecanoe) を使用。
+GeoParquet への変換は [GDAL/OGR (OSGeo4W)](https://trac.osgeo.org/osgeo4w/) を使用。
+
+```bash
+# CSVからGeoParquetの作成
+ogr2ogr -f "Parquet" honhyo_2019-2024_convert.parquet honhyo_2019-2024_convert.csv -oo X_POSSIBLE_NAMES=地点_経度（東経）_10進数 -oo Y_POSSIBLE_NAMES=地点_緯度（北緯）_10進数 -s_srs EPSG:4326 -t_srs EPSG:4326
+
+# CSVからGeoJSONの作成
+ogr2ogr -f "GeoJSON" honhyo_2019-2024_convert.geojson honhyo_2019-2024_convert.csv -oo X_POSSIBLE_NAMES=地点_経度（東経）_10進数 -oo Y_POSSIBLE_NAMES=地点_緯度（北緯）_10進数 -s_srs EPSG:4326 -t_srs EPSG:4326
+```
+
+PMTiles への変換は [felt/tippecanoe](https://github.com/felt/tippecanoe) を使用。
+
+```bash
+# PMTilesの作成
+tippecanoe -o honhyo_2019-2024_convert.pmtiles honhyo_2019-2024_convert.geojson -pf -pk -P -B12
+```
 
 ---
 
@@ -146,6 +160,7 @@ MapLibre GL JS を使った可視化デモ：[https://shiwaku.github.io/npa-traf
 
 ## 更新履歴
 
+- **2026/04/06** バグ修正: 一時停止規制_表示（当事者B）のインデックス誤参照を修正
 - **2025/09/21** コード表の「当事者種別」を「原付自転車」から「一般原付自転車」に変更、「警察署等」に「80,053,徳島,交通指導課（高速隊）」を追加
 - **2025/09/20** コード表の「当事者種別」に「特定小型原付自転車」を追加
 
